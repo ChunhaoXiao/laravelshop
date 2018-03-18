@@ -90,19 +90,23 @@ class Product extends Model
     public function attributeList()
     {
         $attributes = $this->productattributes()->with('attribute')->get() ;
-        foreach($attributes as $attribute)
-        {
+        if($attributes->count()){
+            foreach($attributes as $attribute)
+            {
 
-            if(isset($attributeList[$attribute->attribute_id]))
-            {
-                $attributeList[$attribute->attribute_id]->attribute_value .= '/'.$attribute->attribute_value;
+                if(isset($attributeList[$attribute->attribute_id]))
+                {
+                    $attributeList[$attribute->attribute_id]->attribute_value .= '/'.$attribute->attribute_value;
+                }
+                else
+                {
+                    $attributeList[$attribute->attribute_id] = $attribute ;
+                }
             }
-            else
-            {
-                $attributeList[$attribute->attribute_id] = $attribute ;
-            }
-        }
-        return $attributeList ;
+
+            return $attributeList ;
+       }
+       return [] ;
     }
 
 }

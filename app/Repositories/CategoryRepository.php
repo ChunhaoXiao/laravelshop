@@ -2,7 +2,7 @@
 namespace App\Repositories ;
 //use App\Repositories\CategoryRepositoryInterface ;
 use App\Models\Category ;
-use App\Models\ProductAttribute ;
+use App\Models\Productattribute ;
 use App\Models\Attribute ;
 use Cache ;
 class CategoryRepository implements CategoryRepositoryInterface

@@ -181,7 +181,7 @@ class ProductService{
             $image->resize(200,200);
             $info = pathinfo($thumb);
             $thumb = $info['dirname'].'/'.$info['filename'].'_thumb.'.$info['extension'];
-            $image->save('./Storage/'.$thumb);
+            $image->save('./storage/'.$thumb);
             return $thumb ;
         }
         return false ;

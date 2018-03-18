@@ -10,7 +10,7 @@ use App\Http\Requests\SaveProduct ;
 use App\Service\ProductService ;
 use App\Service\ProductSearchService ;
 use App\Events\ProductUpdated ;
-use App\Service\Categoryservice ;
+use App\Service\CategoryService ;
 use Storage  ;
 
 class ProductController extends Controller
@@ -72,7 +72,7 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product, Categoryservice $category)
+    public function edit(Product $product, CategoryService $category)
     {
 
         $attribute = $category->getAttribute($product->category_id);
